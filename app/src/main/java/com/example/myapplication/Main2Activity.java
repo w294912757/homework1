@@ -1,4 +1,4 @@
-package com.example.myapplication.ui;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,13 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import com.example.myapplication.Main3Activity;
-import com.example.myapplication.MainActivity;
-import com.example.myapplication.R;
-
-import org.w3c.dom.Text;
 
 public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     String[] strs = {"数据结构", "JAVA", "数据库", "操作系统"};
