@@ -15,13 +15,14 @@ public class Main3Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent it = new Intent();
+        final int classname =it.getIntExtra("classname",0);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        Intent it = getIntent();
-        String classname = it.getStringExtra("classname");
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
-
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();

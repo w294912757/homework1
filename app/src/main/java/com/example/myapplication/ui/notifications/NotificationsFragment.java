@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.notifications;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,9 @@ public class NotificationsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        Intent it = new Intent();
+        final int classname =it.getIntExtra("classname",0);
+
         notificationsViewModel =
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
@@ -27,7 +31,20 @@ public class NotificationsFragment extends Fragment {
         notificationsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                switch (classname) {
+                    case 0:
+                        textView.setText("数据结构");
+                        break;
+                    case 1:
+                        textView.setText("JAVA");
+                        break;
+                    case 2:
+                        textView.setText("数据库");
+                        break;
+                    case 3:
+                        textView.setText("操作系统");
+                        break;
+                }
             }
         });
         return root;
