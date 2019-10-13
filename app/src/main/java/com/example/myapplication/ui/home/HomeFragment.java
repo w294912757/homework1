@@ -13,16 +13,20 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.myapplication.Main3Activity;
 import com.example.myapplication.R;
 
 public class HomeFragment extends Fragment {
-
+    private int classname;
     private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        Intent it = new Intent();
-        final int classname =it.getIntExtra("classname",0);
+
+        Main3Activity act = (Main3Activity) getActivity();
+        TextView tv = (TextView) act.findViewById(R.id.ClassName);
+        classname = Integer.parseInt(tv.getText().toString());
+
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);

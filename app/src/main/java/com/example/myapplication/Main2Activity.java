@@ -27,7 +27,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent it = new Intent(Main2Activity.this, Main3Activity.class);
-        it.putExtra("classname", strs[position]);
+        it.putExtra("classname", position);
         startActivity(it);
     }
 }
