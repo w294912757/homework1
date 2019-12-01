@@ -45,6 +45,7 @@ public class Main3Activity extends AppCompatActivity {
         String name = Integer.toString(classname);
         TextView tv = (TextView) findViewById(R.id.ClassName);
         tv.setText(name);
+        tv.setVisibility(View.INVISIBLE);
 
         recyclerView = (RecyclerView) findViewById(R.id.aListView);
 
