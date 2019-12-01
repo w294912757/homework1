@@ -8,7 +8,7 @@
         <item>JAVA</item>
         <item>操作系统</item>
     </string-array>
-    <string name="title_activity_main3">Main3Activity</string>
+    <string name="title_activity_main3">E-Learning</string>
     <string name="title_home">课程简介</string>
     <string name="title_dashboard">教师信息</string>
     <string name="title_notifications">学习资源</string>

@@ -3,6 +3,13 @@ package com.example.myapplication.ui.notifications;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.Lesson;
+import com.example.myapplication.LessonAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NotificationsViewModel extends ViewModel {
 
