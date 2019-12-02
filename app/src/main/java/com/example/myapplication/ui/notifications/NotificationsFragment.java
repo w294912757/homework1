@@ -65,7 +65,7 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 Lesson lesson = lessonList.get(position);
-                Toast.makeText(getActivity().getApplicationContext(), lesson.getName() + " is selected!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), lesson.getName() + " is selected!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -77,44 +77,44 @@ public class NotificationsFragment extends Fragment {
     private void createLessonList() {
 
         Lesson Lesson1 = new Lesson();
-        Lesson1.setName("Monkey");
-        Lesson1.setDetails("Monkeys are haplorhine (\"dry-nosed\") primates, a paraphyletic group generally possessing tails and consisting of approximately 260 known living species");
+        Lesson1.setName("1");
+        Lesson1.setDetails("11");
 
         Lesson Lesson2 = new Lesson();
-        Lesson2.setName("Buffalo");
-        Lesson2.setDetails("The African buffalo or Cape buffalo (Syncerus caffer) is a large African bovine");
+        Lesson2.setName("2");
+        Lesson2.setDetails("22");
 
         Lesson Lesson3 = new Lesson();
-        Lesson3.setName("Donkey");
-        Lesson3.setDetails("The donkey or ass is a domesticated member of the horse family, Equidae. The wild ancestor of the donkey is the African wild ass, E. africanus");
+        Lesson3.setName("3");
+        Lesson3.setDetails("33");
 
         Lesson Lesson4 = new Lesson();
-        Lesson4.setName("Dog");
-        Lesson4.setDetails("The domestic dog is a domesticated canid which has been selectively bred over millennia for various behaviours, sensory capabilities, and physical attributes");
+        Lesson4.setName("4");
+        Lesson4.setDetails("44");
 
         Lesson Lesson5 = new Lesson();
-        Lesson5.setName("Goat");
-        Lesson5.setDetails("The domestic goat is a subspecies of goat domesticated from the wild goat of southwest Asia and Eastern Europe");
+        Lesson5.setName("5");
+        Lesson5.setDetails("55");
 
         Lesson Lesson6 = new Lesson();
-        Lesson6.setName("Tiger");
-        Lesson6.setDetails("The tiger is the largest cat species, most recognisable for their pattern of dark vertical stripes on reddish-orange fur with a lighter underside");
+        Lesson6.setName("6");
+        Lesson6.setDetails("66");
 
         Lesson Lesson7 = new Lesson();
-        Lesson7.setName("Lion");
-        Lesson7.setDetails("The lion is one of the big cats in the genus Panthera and a member of the family Felidae.");
+        Lesson7.setName("7");
+        Lesson7.setDetails("77");
 
         Lesson Lesson8 = new Lesson();
-        Lesson8.setName("Leopard");
-        Lesson8.setDetails("The leopard is one of the five \"big cats\" in the genus Panthera");
+        Lesson8.setName("8");
+        Lesson8.setDetails("88");
 
         Lesson Lesson9 = new Lesson();
-        Lesson9.setName("Cheetah");
-        Lesson9.setDetails("The cheetah, also known as the hunting leopard, is a big cat that occurs mainly in eastern and southern Africa and a few parts of Iran");
+        Lesson9.setName("9");
+        Lesson9.setDetails("99");
 
         Lesson Lesson10 = new Lesson();
-        Lesson10.setName("Rat");
-        Lesson10.setDetails("Rats are various medium-sized, long-tailed rodents of the superfamily Muroidea");
+        Lesson10.setName("10");
+        Lesson10.setDetails("100");
 
         lessonList.add(Lesson1);
         lessonList.add(Lesson2);
