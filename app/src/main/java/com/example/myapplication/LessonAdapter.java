@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class LessonAdapter extends RecyclerView.Adapter {
+public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonViewHolder> {
     private List<Lesson> lessons;
     private int rowLayout;
 
@@ -24,12 +24,6 @@ public class LessonAdapter extends RecyclerView.Adapter {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
         return new LessonViewHolder(view);
     }
-
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-    }
-
 
     public void onBindViewHolder(LessonViewHolder holder, final int position) {
         holder.name.setText(lessons.get(position).getName());
