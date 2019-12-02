@@ -23,8 +23,8 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        Main3Activity act = (Main3Activity) getActivity();
-        TextView tv = (TextView) act.findViewById(R.id.ClassName);
+
+        TextView tv = getActivity().findViewById(R.id.ClassName);
         classname = Integer.parseInt(tv.getText().toString());
 
         dashboardViewModel =
