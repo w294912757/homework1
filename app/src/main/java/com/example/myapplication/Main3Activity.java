@@ -19,9 +19,6 @@ import androidx.navigation.ui.NavigationUI;
 
 public class Main3Activity extends AppCompatActivity {
     private int classname;
-    private static final String TAG = MainActivity.class.getSimpleName();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
