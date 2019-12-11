@@ -59,7 +59,7 @@ public class Main4Activity extends AppCompatActivity {
                             line=br.readLine();
                         }
                         Toast.makeText(Main4Activity.this, "注册成功！", Toast.LENGTH_SHORT).show();
-                        /*FileOutputStream fos = Main4Activity.this.openFileOutput("appfile.txt", Context.MODE_PRIVATE);
+                        FileOutputStream fos = Main4Activity.this.openFileOutput("appfile.txt", Context.MODE_PRIVATE);
                         OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
                         osw.write(username + "#" + password);
                         osw.flush();
@@ -67,7 +67,7 @@ public class Main4Activity extends AppCompatActivity {
                         osw.close();
                         fos.close();
                         Toast.makeText(Main4Activity.this, "注册成功！", Toast.LENGTH_SHORT).show();
-                        finish();*/
+                        finish();
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
