@@ -16,6 +16,12 @@ import java.io.FileOutputStream;
 
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main4Activity extends AppCompatActivity {
@@ -41,33 +47,33 @@ public class Main4Activity extends AppCompatActivity {
                     Toast.makeText(Main4Activity.this, "用户名和密码不能为空", Toast.LENGTH_SHORT).show();
                 } else {
                     try {
-                        FileInputStream fis = Main4Activity.this.openFileInput("appfile.txt");
-                        InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
-                        BufferedReader br = new BufferedReader(isr);
-                        String line = br.readLine();
-                        String[] s;
-
-                        while (line != null) {
-                            s = line.split("#");
-                            if(username.equals(s[0]))
-                            {
-                                Toast.makeText(Main4Activity.this, "该用户已存在！", Toast.LENGTH_SHORT).show();
-                            }else
-                            {
-                                break;
+                        Class.forName("com.mysql.jdbc.Driver");
+                        java.sql.Connection cn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/elearn", "root", "root");
+                        String sql = "select * from user;";
+                        try {
+                            Statement st = (Statement) cn.createStatement();
+                            ResultSet rs = st.executeQuery(sql);
+                            List users = new ArrayList();
+                            while (rs.next()) {
+                                users.add(rs.getString(1));
                             }
-                            line=br.readLine();
+                            if (users.contains(username)) {
+                                Toast.makeText(Main4Activity.this, "该用户已存在！", Toast.LENGTH_SHORT).show();
+                            } else {
+                                sql = "insert into user ('" + username + "','" + password + "');";
+                                st.executeUpdate(sql);
+                                Toast.makeText(Main4Activity.this, "注册成功！", Toast.LENGTH_SHORT).show();
+                                finish();
+                                cn.close();
+                                st.close();
+                                rs.close();
+                            }
+
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
                         }
-                        Toast.makeText(Main4Activity.this, "注册成功！", Toast.LENGTH_SHORT).show();
-                        FileOutputStream fos = Main4Activity.this.openFileOutput("appfile.txt", Context.MODE_PRIVATE);
-                        OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
-                        osw.write(username + "#" + password);
-                        osw.flush();
-                        fos.flush();  //输出缓冲区中所有的内容
-                        osw.close();
-                        fos.close();
-                        Toast.makeText(Main4Activity.this, "注册成功！", Toast.LENGTH_SHORT).show();
-                        finish();
+
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
