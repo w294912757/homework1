@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.data;
 
 public class Lesson {
     String lessonname;

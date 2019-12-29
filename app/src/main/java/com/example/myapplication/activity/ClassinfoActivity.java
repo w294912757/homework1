@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
 
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
+import com.example.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,13 +18,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 
-public class Main3Activity extends AppCompatActivity {
+public class ClassinfoActivity extends AppCompatActivity {
     private int classname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_info);
         Intent it = getIntent();
         classname =it.getIntExtra("classname",0);
         String name = Integer.toString(classname);

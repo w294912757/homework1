@@ -20,8 +20,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.Lesson;
-import com.example.myapplication.LessonAdapter;
+import com.example.myapplication.data.Lesson;
+import com.example.myapplication.data.LessonAdapter;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;

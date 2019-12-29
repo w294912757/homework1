@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,14 +10,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+import com.example.myapplication.R;
+
+public class SelectActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     String[] strs = {"数据结构", "JAVA", "数据库", "操作系统"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        Toast.makeText(Main2Activity.this, "欢迎！", Toast.LENGTH_SHORT).show();
+        setContentView(R.layout.activity_select);
+        Toast.makeText(SelectActivity.this, "欢迎！", Toast.LENGTH_SHORT).show();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_expandable_list_item_1, strs);
         ListView ClassList = (ListView) findViewById(R.id.ClassList);
@@ -27,7 +29,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent it = new Intent(Main2Activity.this, Main3Activity.class);
+        Intent it = new Intent(SelectActivity.this, ClassinfoActivity.class);
         it.putExtra("classname", position);
         startActivity(it);
     }
