@@ -47,3 +47,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         }
     }
 }
+
+
+
+

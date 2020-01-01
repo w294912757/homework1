@@ -33,16 +33,16 @@ public class HomeFragment extends Fragment {
             public void onChanged(@Nullable String s) {
                 switch (classname) {
                     case 0:
-                        textView.setText("数据结构");
+                        textView.setText("数据结构课程简介");
                         break;
                     case 1:
-                        textView.setText("JAVA");
+                        textView.setText("JAVA课程简介");
                         break;
                     case 2:
-                        textView.setText("数据库");
+                        textView.setText("数据库课程简介");
                         break;
                     case 3:
-                        textView.setText("操作系统");
+                        textView.setText("操作系统课程简介");
                         break;
                 }
             }

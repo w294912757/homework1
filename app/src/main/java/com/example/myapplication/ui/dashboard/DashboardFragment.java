@@ -34,16 +34,16 @@ public class DashboardFragment extends Fragment {
             public void onChanged(@Nullable String s) {
                 switch (classname) {
                     case 0:
-                        textView.setText("数据结构");
+                        textView.setText("数据结构教师信息");
                         break;
                     case 1:
-                        textView.setText("JAVA");
+                        textView.setText("JAVA教师信息");
                         break;
                     case 2:
-                        textView.setText("数据库");
+                        textView.setText("数据库教师信息");
                         break;
                     case 3:
-                        textView.setText("操作系统");
+                        textView.setText("操作系统教师信息");
                         break;
                 }
             }
