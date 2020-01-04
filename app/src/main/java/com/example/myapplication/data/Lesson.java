@@ -4,6 +4,15 @@ public class Lesson {
     String lessonname;
     String lessondetail;
 
+    public Lesson(String lessonname, String lessondetail) {
+        this.lessonname = lessonname;
+        this.lessondetail = lessondetail;
+    }
+
+    public Lesson() {
+
+    }
+
     public String getName() {
         return lessonname;
     }
