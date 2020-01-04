@@ -2,16 +2,17 @@ package com.example.myapplication.ui.notifications;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 
 import android.view.MotionEvent;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.activity.StudyActivity;
 import com.example.myapplication.data.Lesson;
 import com.example.myapplication.data.LessonAdapter;
 import com.example.myapplication.R;
@@ -38,7 +40,6 @@ public class NotificationsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
 
         notificationsViewModel =
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
@@ -77,7 +78,11 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 Lesson lesson = lessonList.get(position);
-                Toast.makeText(getActivity().getApplicationContext(), lesson.getName() + " is selected!", Toast.LENGTH_SHORT).show();
+                Context context = getActivity();
+                Intent it = new Intent(context, StudyActivity.class);
+                it.putExtra("classname",lesson.getName());
+                it.putExtra("classno",position);
+                context.startActivity(it);
             }
 
             @Override
@@ -92,7 +97,7 @@ public class NotificationsFragment extends Fragment {
         for (int i = 1; i < 11; i++) {
             Lesson lesson = new Lesson();
             lesson.setName(classname + "学习资源" + i);
-            lesson.setDetails(classname + "学习资源详情" + i);
+            lesson.setDetails(classname + "学习资源" + i+"详情");
             lessonList.add(lesson);
         }
 

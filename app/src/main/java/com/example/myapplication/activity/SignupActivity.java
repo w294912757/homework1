@@ -46,7 +46,7 @@ public class SignupActivity extends AppCompatActivity {
                     if (cursor.moveToFirst()) {
                         for (int i = 0; i < cursor.getCount(); i++) {
                             cursor.move(i);
-                            String usernamed = cursor.getString(0);
+                            String usernamed = cursor.getString(cursor.getColumnIndex("username"));
                             if (usernamed.equals(username)) {
                                 Toast.makeText(SignupActivity.this, "该用户已存在", Toast.LENGTH_SHORT).show();
                                 find = true;
