@@ -44,14 +44,16 @@ public class SignupActivity extends AppCompatActivity {
                     boolean find = false;
 
                     if (cursor.moveToFirst()) {
-                        for (int i = 0; i < cursor.getCount(); i++) {
-                            cursor.move(i);
+
+                        cursor.moveToFirst();
+                        while (cursor.moveToNext()) {
                             String usernamed = cursor.getString(cursor.getColumnIndex("username"));
                             if (usernamed.equals(username)) {
                                 Toast.makeText(SignupActivity.this, "该用户已存在", Toast.LENGTH_SHORT).show();
                                 find = true;
                             }
                         }
+
                     }
                     if (find == false) {
                         db.execSQL("insert into user values('" + username + "','" + pass + "');");

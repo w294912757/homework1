@@ -55,8 +55,7 @@ public class LoginActivity extends Activity {
                     Cursor cursor = db.query("user", null, null, null, null, null, null);
                     boolean find = false;
                     if (cursor.moveToFirst()) {
-                        for (int i = 0; i < cursor.getCount(); i++) {
-                            cursor.move(i);
+                        while (cursor.moveToNext()) {
                             String usernamed = cursor.getString(cursor.getColumnIndex("username"));
                             String passed = cursor.getString(cursor.getColumnIndex("pass"));
 
